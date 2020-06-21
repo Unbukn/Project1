@@ -1,0 +1,28 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: blue;
+    color: cornsilk;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.button {
+    width: 100px;
+    height: 59px;
+    border-radius: 10px;
+    font-weight: 900;
+    padding: auto;
+    margin: auto;
+}
+
+#questionCard {
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 70$;
+}
