@@ -5,32 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">   
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <!-- Compressed JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script> -->
     <title>Temperature</title>
 </head>
 <body>
-
     <!-- Header w/ title, date here -->
     <div class="title-bar">
         <div class="title-bar-title">
-            <p><h1>Temperature</h1> <h3>the mood stabilizer</h3></p>
-            <p>moments.js date here</p>
+            <div class="custHead">
+                <h1>Temperature</h1>
+                <h3>the mood stabilizer</h3>
+                <p class="momentsDate">moments.js date here</p>
+            </div>
         </div>
     </div>
     <br>
     <!-- card (centered) with the question "How are you feeling today?" and three buttons -->
     <div class="container">
-        <div class="card" style="width: 300px;">
+        <div class="card" id="questionCard">
             <div class="card-divider">
-              This is a header
+              
             </div>
-            <img src="assets/img/generic/rectangle-1.jpg">
             <div class="card-section">
-              <h4>This is a card.</h4>
-              <p>It has an easy to override visual style, and is appropriately subdued.</p>
+              <h4>How are you feeling this morning?</h4>
+              <p></p>
             </div>
-          </div>
+            <div class="button-group align-spaced">
+                <a class="button" id="great">Feelin' great!</a>
+                <a class="button" id="notSure">Not really sure</a>
+                <a class="button" id="notGreat">Not so great</a>
+            </div>
+              
+        </div>
     </div>
     <!-- div here to contain the result of the click -->
     <div class="container" id="results">
