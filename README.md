@@ -22,7 +22,6 @@ a web browser with internet connectivity.
 # Acceptance Criteria:
 
 ## Known Bugs:
-
 TBD
 
 ## Support & Contact details:
@@ -49,7 +48,7 @@ Bestquotes
 
 New York Times 
 
-## Contribution Guidlines 
+## Contribution Guidelines 
 ​
 Direct link to site: https://unbukn.github.io/Project1/
 
