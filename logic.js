@@ -51,5 +51,16 @@ $.ajax(happyQuotes).done(function (poop) {
 	console.log(poop);
 });
 
+$(".button").on("click", function () {
+
+	document.getElementById("great").style.visibility = "hidden";
+	document.getElementById("notGreat").style.visibility = "hidden";
+	document.getElementById("notSure").style.visibility = "hidden";
+	document.getElementById("reset").style.visibility = "visible"
+
+}) 
+
+
+	
 
 
