@@ -12,6 +12,12 @@ footer {
     text-align: center;
 }
 
+.answerCard {
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 60%;
+}
+
 .button {
     width: 100px;
     height: 59px;
