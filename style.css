@@ -8,6 +8,12 @@ footer {
     text-align: center;
 }
 
+.answerCard {
+    padding-bottom: 10px;
+    display: inline-block;
+    width: 60%;
+}
+
 .container {
     text-align: center;
 }
