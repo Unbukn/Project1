@@ -1,5 +1,5 @@
 # Temperature
-![Alt text](.Assets/LogoMakr_9JmX12.png?raw=true "Design")
+![Alt text](./Assets/LogoMakr_9JmX12.png?raw=true "Design")
 
 ### Created on 6/20/2020
 ### Last Update on 06/25/20
@@ -40,7 +40,7 @@ After results are displayed, the user can select the ‘reset’ button and will
 
 
 ### Architecture Diagram
-![Alt text](.Assets/arch.png?raw=true "Design")
+![Alt text](./Assets/arch.png?raw=true "Design")
 
 ## Known Bugs:
 None
@@ -50,7 +50,7 @@ Direct link to site: https://unbukn.github.io/Project1/
 Direct link to Documentation: https://docs.google.com/document/d/1WhiaeWRMq0XmhxBcRfWZ1QtyxVUZkL_ZFdk6OJIATM8/
 
 ## Development Team
-![Alt text](.Assets/team.png?raw=true "Design")
+![Alt text](./Assets/team.png?raw=true "Design")
 
 ## Support
 If you need assistance please send email to: ereqibashkim@gmail.com, james.hudgins.work@gmail.com, sam.ascheim@gmail.com, alejandroescanellas@gmail.com
