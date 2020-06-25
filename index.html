@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
     <!-- Compressed JavaScript -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script> -->
+    
+    <!-- link to google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&display=swap" rel="stylesheet">
     <title>Temperature</title>
 </head>
 <body>
@@ -18,19 +21,24 @@
             <div class="custHead">
                 <h1>Temperature</h1>
                 <h3>the mood stabilizer</h3>
-                <p class="momentsDate">moments.js date here</p>
+                <p class="momentsDate"></p>
             </div>
         </div>
     </div>
     <br>
+
+    <!-- div here to contain the result of the click -->
+    <div class="container" id="results">
+        <p></p>
+    </div>
     <!-- card (centered) with the question "How are you feeling today?" and three buttons -->
     <div class="container">
         <div class="card" id="questionCard">
             <div class="card-divider">
-              
+                
             </div>
             <div class="card-section">
-              <h4 id="headerQuestion">How are you feeling this morning?</h4>
+                <h4 id="headerQuestion">How are you feeling?</h4>
             </div>
             <div class="button-group align-spaced" id="questionButtons">
                 <a class="button" id="great">Feelin' great!</a>
@@ -41,13 +49,9 @@
 
         </div>
     </div>
-    <!-- div here to contain the result of the click -->
-    <div class="container" id="results">
-        <p>results will go here</p>
-    </div>
     <!-- footer -->
     <footer>
-        Footer will go here
+        <a href="https://github.com/Unbukn/Project1" target="_blank" rel="noopener noreferrer">Documentation</a>
     </footer>
 </body>
 </html>
