@@ -27,6 +27,14 @@ footer {
     margin: auto;
 }
 
+.quotePara{
+    font-family: 'Indie Flower', cursive;
+}
+
+.quoteAuth{
+    font-family: 'Great Vibes', cursive; 
+}
+
 #questionCard {
     padding-bottom: 10px;
     display: inline-block;
