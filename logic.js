@@ -1,14 +1,6 @@
 console.log("App Started")
 
-// var search = "dogs"
-// var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search + "&api-key=fUAV70oYpTeS4X52k9Ce031QOrQOi4Tg";
-// $.ajax({
-// 	url: queryURL,
-// 	method: "GET"
-//   }).then(function(res2) {
-// 	  console.log(res2)
 
-//   })
 
 // function to be called at each "how are you feeling" button event listener
   function replaceButtons() {
@@ -73,6 +65,27 @@ $("#great").on("click", function (event) {
 				}
 			}
 			$.ajax(sadQuote).done(function (bestQuotes) {
+
+				var search = "news"
+				var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + search + "&api-key=fUAV70oYpTeS4X52k9Ce031QOrQOi4Tg";
+				$.ajax({
+					url: queryURL,
+					method: "GET"
+				  }).then(function(res2) {
+					  console.log(res2)
+					// define the headline of the NTY article
+					  var headline = res2.response.docs[0].headline.main
+					// define the abstract of the NTY article  
+					  var abstract = res2.response.docs[0].abstract
+					// define the URL of the NTY article 
+					  var nytURL = res2.response.docs[0].web_url
+					  console.log(headline)
+					  console.log(abstract)
+					  
+
+				  
+
+			
 				// console.log(bestQuotes);
 			// create var containing results from Quotes
 			// var quote
@@ -85,16 +98,30 @@ $("#great").on("click", function (event) {
 			$("#results").empty();
 			// creat new div
 			var newDiv = $("<div>")
+			// this is the nyt div that will hold the card
+			var newNYTDiv = $("<div>")
 			
 			// apply the card and answerCard class to the new div
 			newDiv.addClass("card answerCard");
+			// this is the class for the nyt card
+			newNYTDiv.addClass("card answerCard nytLink")
 			
 			// create a new para for the quote
 			var newPara = $("<h3>")
+			// this declares the h4 nyt headline variable
+			var nytHead = $("<h4>")
 
 			// apply quote text to the para
 			newPara.text(theQuote)
 			newPara.attr("class", "quotePara")
+			// apply  NYT article headline text to the card
+			nytHead.text(headline)
+			nytHead.attr("class", "nytHead")
+
+			// apply NYT abstract to the card
+			var nytAbstract = $("<p>")
+			nytAbstract.text(abstract)
+			nytAbstract.attr("class", "nytBody")
 			
 			// second para for author
 			var newPara2 = $("<p>")
@@ -108,12 +135,23 @@ $("#great").on("click", function (event) {
 			// append the paras to the new div
 			newPara.appendTo(newDiv);
 			newPara2.appendTo(newDiv);
+			// append NYT article to the results div
+			$(newNYTDiv).appendTo('#results');
+			nytHead.appendTo(newNYTDiv);
+			nytAbstract.appendTo(newNYTDiv);
+			
+
 
 			// remove the original buttons div
 			replaceButtons()
 			resetPage()
-
 		})
+		})
+		
+
+
+
+
 });
 
 

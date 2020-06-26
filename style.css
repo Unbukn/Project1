@@ -35,8 +35,17 @@ footer {
     font-family: 'Great Vibes', cursive; 
 }
 
+.nytHead {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+}
+
+.nytBody {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
 #questionCard {
     padding-bottom: 10px;
     display: inline-block;
 }
-
