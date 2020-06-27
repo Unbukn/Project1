@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">   
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <!-- flickity css -->
+    <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
     <!-- Compressed JavaScript -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script> -->
     
@@ -33,17 +35,44 @@
     </div>
     <!-- card (centered) with the question "How are you feeling today?" and three buttons -->
     <div class="container">
+        <div id="nameCont">
+            <div class="card" id="nameCard">
+                <div class="card-section">
+                    <p>Before we start, we need to know your name.</p> 
+                </div>
+                <div class="medium-6 cell">
+                      <input id="nameBox" type="text" placeholder="Enter your name. . . ">
+                      <input id="nameSubmitButton" type="submit">
+                  </div>
+            </div>
+        </div>
+        <br>
         <div class="card" id="questionCard">
             <div class="card-divider">
-                
+               
             </div>
             <div class="card-section">
-                <h4 id="headerQuestion">How are you feeling?</h4>
+                <h4 id="headerQuestion">Click the word that best describes your current state of mind</h4>
             </div>
-            <div class="button-group align-spaced" id="questionButtons">
-                <a class="button" id="great">Feelin' great!</a>
-                <a class="button" id="notSure">Not really sure</a>
-                <a class="button" id="notGreat">Not so great</a>
+            <div class="carousel" id="questionButtons" data-flickity='{ "autoPlay": 1500 }'>
+                <div class="button carousel-cell" id="happy"><p class="buttonCont">Happy</p></div>
+                <div class="button carousel-cell" id="Sad"><p class="buttonCont">Sad</p></div>
+                <div class="button carousel-cell" id="wisdom"><p class="buttonCont">Wisdom</p></div>
+                <div class="button carousel-cell" id="somber"><p class="buttonCont">Somber</p></div>
+                <div class="button carousel-cell" id="romantic"><p class="buttonCont">Romantic</p></div>
+                <div class="button carousel-cell" id="cheerful"><p class="buttonCont">Cheerful</p></div>
+                <div class="button carousel-cell" id="peace"><p class="buttonCont">Peace</p></div>
+                <div class="button carousel-cell" id="power"><p class="buttonCont">Power</p></div>
+                <div class="button carousel-cell" id="joyful"><p class="buttonCont">Joyful</p></div>
+                <div class="button carousel-cell" id="guilty"><p class="buttonCont">Guilty</p></div>
+                <div class="button carousel-cell" id="angry"><p class="buttonCont">Angry</p></div>
+                <div class="button carousel-cell" id="gloomy"><p class="buttonCont">Gloomy</p></div>
+                <div class="button carousel-cell" id="thankful"><p class="buttonCont">Thankful</p></div>
+                <div class="button carousel-cell" id="hopeful"><p class="buttonCont">Hopeful</p></div>
+                <div class="button carousel-cell" id="notSure"><p class="buttonCont">Not sure</p></div>
+
+
+
                 <!-- <a class="button" id="reset" style="visibility:hidden">Reset</a> -->
             </div>
 
@@ -54,6 +83,10 @@
         <a href="https://github.com/Unbukn/Project1" target="_blank" rel="noopener noreferrer">Documentation</a>
     </footer>
 </body>
-</html>
+
+<!-- link to flickity js -->
+<script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
+<!-- link to jquery -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="./logic.js"></script>
+</html>

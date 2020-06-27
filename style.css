@@ -27,6 +27,11 @@ footer {
     margin: auto;
 }
 
+.buttonCont {
+    margin-top: 50%;
+    font-size: xx-large;
+}
+
 .quotePara{
     font-family: 'Indie Flower', cursive;
 }
@@ -49,3 +54,41 @@ footer {
     padding-bottom: 10px;
     display: inline-block;
 }
+
+#nameCar {
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+
+/* flickity css */
+/* external css: flickity.css */
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 35%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: px;
+  border-color: white;
+  
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
