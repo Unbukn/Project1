@@ -3,41 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature - The Mood Stabilizer</title>
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">   
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="./style.css">
     <!-- flickity css -->
     <link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
-    <!-- Compressed JavaScript -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script> -->
-    
     <!-- link to google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&display=swap" rel="stylesheet">
-    <title>Temperature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Gamja+Flower&family=Great+Vibes&family=Indie+Flower&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header w/ title, date here -->
+    <!-- Header w/ title here -->
     <div class="title-bar">
         <div class="title-bar-title">
             <div class="custHead">
                 <h1>Temperature</h1>
-                <h3>the mood stabilizer</h3>
-                <p class="momentsDate"></p>
+                <h3> - the mood stabilizer</h3>
             </div>
         </div>
     </div>
     <br>
-
     <!-- div here to contain the result of the click -->
     <div class="container" id="results">
-        <p></p>
     </div>
     <!-- card (centered) with the question "How are you feeling today?" and three buttons -->
     <div class="container">
         <div id="nameCont">
             <div class="card" id="nameCard">
                 <div class="card-section">
+                    <!-- about Temperature -->
+                    <h4>About Temperature</h4>
+                    <p>Temperature is an application that provides users with quotes tailored to their current state. Content provided aims to promote a stimulating environment in which users can ruminate, reflect on, and process their innermost feelings.</p>
+                    <!-- Who is temperature for? -->
+                    <h4>Who should Temperature?</h4>
+                    <p>Temperature is for everyone but, please note; <i>some quotes may contain violence, suggestive themes, crude humor, and/or infrequent use of strong language.</i></p>
+                    
+                    <h4>Ready to get started?</h4>
                     <p>Before we start, we need to know your name.</p> 
                 </div>
                 <div class="medium-6 cell">
@@ -48,11 +50,11 @@
         </div>
         <br>
         <div class="card" id="questionCard">
-            <div class="card-divider">
+            <!-- <div class="card-divider">
                
-            </div>
+            </div> -->
             <div class="card-section">
-                <h4 id="headerQuestion">Click the word that best describes your current state of mind</h4>
+                <h4 id="headerQuestion">Click the word that speaks to you most.</h4>
             </div>
             <div class="carousel" id="questionButtons" data-flickity='{ "autoPlay": 1500 }'>
                 <div class="button carousel-cell" id="happy"><p class="buttonCont">Happy</p></div>
@@ -70,23 +72,21 @@
                 <div class="button carousel-cell" id="thankful"><p class="buttonCont">Thankful</p></div>
                 <div class="button carousel-cell" id="hopeful"><p class="buttonCont">Hopeful</p></div>
                 <div class="button carousel-cell" id="notSure"><p class="buttonCont">Not sure</p></div>
-
-
-
-                <!-- <a class="button" id="reset" style="visibility:hidden">Reset</a> -->
             </div>
-
         </div>
     </div>
     <!-- footer -->
     <footer>
-        <a href="https://github.com/Unbukn/Project1" target="_blank" rel="noopener noreferrer">Documentation</a>
+        <a href="https://github.com/Unbukn/Project1" target="_blank" rel="noopener noreferrer"><h4>Documentation</h4></a>
     </footer>
-</body>
 
+<!-- Compressed JavaScript for foundations -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script> -->
+  
 <!-- link to flickity js -->
 <script src="https://npmcdn.com/flickity@2/dist/flickity.pkgd.js"></script>
 <!-- link to jquery -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="./logic.js"></script>
+</body>
 </html>

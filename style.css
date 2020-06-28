@@ -7,6 +7,9 @@ footer {
     color: cornsilk;
     text-align: center;
 }
+p, h1, h2, h3, h4, h5, h6{
+    font-family: 'Source Sans Pro', sans-serif;;  
+}
 
 .container {
     text-align: center;
@@ -28,16 +31,23 @@ footer {
 }
 
 .buttonCont {
-    margin-top: 50%;
+    position: relative;
+    text-align: center;
+    margin-top: 70px;
     font-size: xx-large;
+    overflow: auto;
+
 }
 
 .quotePara{
-    font-family: 'Indie Flower', cursive;
+    margin: 20px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: xx-large;
 }
 
 .quoteAuth{
-    font-family: 'Great Vibes', cursive; 
+    font-family: 'Great Vibes', cursive;
+    font-size: x-large;
 }
 
 .nytHead {
@@ -60,7 +70,6 @@ footer {
     display: inline-block;
 }
 
-
 /* flickity css */
 /* external css: flickity.css */
 
@@ -68,12 +77,16 @@ footer {
 
 body { font-family: sans-serif; }
 
+.card{
+    width: 100%;
+    border: none;
+}
 .carousel {
-  background: #EEE;
+  background: rgb(255, 255, 255);
 }
 
 .carousel-cell {
-  width: 35%;
+  width: 45%;
   height: 200px;
   margin-right: 10px;
   background: #8C8;
@@ -84,7 +97,7 @@ body { font-family: sans-serif; }
 
 /* cell number */
 .carousel-cell:before {
-  display: block;
+  display: inline-flex;
   text-align: center;
 
   line-height: 200px;
