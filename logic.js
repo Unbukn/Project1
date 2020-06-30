@@ -193,7 +193,7 @@ $(document).ready(function () {
 		// newCopyButton.text("Copy Quote")
 		// // append to the question div
 		// $(newCopyButton).appendTo("#questionButtons");
-		
+
 		// var to create a new a element for reset button
 		var resetDiv = $("<a>")
 		// add attributes: class "button", id "resetButton", text "Reset"
