@@ -1,10 +1,10 @@
-footer {
+footer, footer a{
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: blue;
-    color: cornsilk;
+    background-color: black;
+    color: white;
     text-align: center;
 }
 p, h1, h2, h3, h4, h5, h6{
@@ -21,6 +21,14 @@ p, h1, h2, h3, h4, h5, h6{
     width: 60%;
 }
 
+.card-section, .quotePara, .about, .who, .ready{
+    background-color: #fff;
+    border: 1px solid #eceff1;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+    padding: 15px;
+    margin: 15px; 
+}
 .button {
     width: 100px;
     height: 59px;
@@ -29,6 +37,8 @@ p, h1, h2, h3, h4, h5, h6{
     padding: auto;
     margin: auto;
 }
+
+
 
 .buttonCont {
     position: relative;
@@ -50,16 +60,6 @@ p, h1, h2, h3, h4, h5, h6{
     font-size: x-large;
 }
 
-.nytHead {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
-
-}
-
-.nytBody {
-    font-family: Georgia, 'Times New Roman', Times, serif
-}
-
 #questionCard {
     padding-bottom: 10px;
     display: inline-block;
@@ -75,7 +75,9 @@ p, h1, h2, h3, h4, h5, h6{
 
 * { box-sizing: border-box; }
 
-body { font-family: sans-serif; }
+body { 
+    font-family: sans-serif; 
+}
 
 .card{
     width: 100%;

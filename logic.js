@@ -40,10 +40,13 @@ $(document).ready(function () {
 					// reset the page
 					location.reload()
 				}else {
+					// if callout already exists remove it
+					$(".callout").remove();
 					// new paragraph
 					var namePara = $("<p>")
 					// give the name para text
 					namePara.text(usersName + "That's not a name. . .");
+					namePara.addClass("callout alert");
 					// append it to the DOM
 					namePara.appendTo("#nameCont");
 				}
@@ -99,6 +102,10 @@ $(document).ready(function () {
 				// apply the author text to the second para
 				newPara2.text(" - " + theAuthor)
 				newPara2.attr("class", "quoteAuth")
+				// change the title of the page to the quote
+				$("title").text(theQuote + " - " + theAuthor)
+			
+							
 
 				// append the new div to the results div
 				$(newDiv).appendTo("#results");
@@ -161,12 +168,15 @@ $(document).ready(function () {
 				// apply quote text to the para
 				newPara.text('"' + theQuote +'"')
 				newPara.attr("class", "quotePara")
+
 				
 				// second para for author
 				var newPara2 = $("<p>")
 				// apply the author text to the second para
 				newPara2.text(" - " + theAuthor)
 				newPara2.attr("class", "quoteAuth")
+				// change the title of the page to the quote
+				$("title").text(theQuote + " - " + theAuthor)
 			
 			
 				// append the new div to the results div
@@ -184,15 +194,15 @@ $(document).ready(function () {
 		// empty the question div of all buttons
 		$("#questionButtons").empty()
 		
-		// // COPY BUTTON UNDER CONSTRUCTION!!!!!
-		// // var to create a new a element for copy button
-		// var newCopyButton = $("<a>")
-		// // add attributes: class "button", id "resetButton", text "Reset"
-		// newCopyButton.attr("class", "button")
-		// newCopyButton.attr("id", "copyButton")
-		// newCopyButton.text("Copy Quote")
-		// // append to the question div
-		// $(newCopyButton).appendTo("#questionButtons");
+		// COPY BUTTON UNDER CONSTRUCTION!!!!!
+		// var to create a new a element for copy button
+		var newCopyButton = $("<a>")
+		// add attributes: class "button", id "resetButton", text "Reset"
+		newCopyButton.attr("class", "button")
+		newCopyButton.attr("id", "copyButton")
+		newCopyButton.text("Copy Quote")
+		// append to the question div
+		$(newCopyButton).appendTo("#questionButtons");
 
 		// var to create a new a element for reset button
 		var resetDiv = $("<a>")
@@ -203,7 +213,7 @@ $(document).ready(function () {
 		// append to the question div
 		$(resetDiv).appendTo("#questionButtons");
 
-		// copyQuote() not finished!
+		copyQuote()
 		}
 
 		// event listener to copy the quote to be shared
@@ -211,16 +221,24 @@ $(document).ready(function () {
 		function copyQuote() {
 		// get the value of the quote
 			$("#copyButton").on("click", function (event) {
-				/* Get the text field */
-				var copyText = document.getElementsByClassName("quotePara")
 
-				/* Select the text field */
-				copyText.select();
-				copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+					// Create a new textarea element and give it id='temp_element'
+					var textarea = document.createElement('textarea')
+					textarea.id = 'temp_element'
+					// Optional step to make less noise on the page, if any!
+					textarea.style.height = 0
+					// Now append it to your page somewhere, I chose <body>
+					document.body.appendChild(textarea)
 
-				/* Copy the text inside the text field */
-				document.execCommand("copy");
-				alert("this is an alert because you clicked copy")
+					// set the textarea to be the inner HTML of the .quotePara
+					textarea.value = $(".quotePara").html()
+					// Now copy whatever inside the textarea to clipboard
+					var selector = document.querySelector('#temp_element')
+					selector.select()
+					document.execCommand('copy')
+					// Remove the textarea
+					document.body.removeChild(textarea)
+
 		  });
 
 		}
