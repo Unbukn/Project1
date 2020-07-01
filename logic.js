@@ -1,8 +1,6 @@
 $(document).ready(function () {
 	console.log("App Started")
 
-
-
 		// on page load check local storage for name
 		var usersName = localStorage.getItem("name")
 		// if name equals null/blank
@@ -13,7 +11,7 @@ $(document).ready(function () {
 			// new paragraph 
 			var namePara = $("<p>")
 			// give the name para text
-			namePara.text("Welcome to TEMPERATURE, " + usersName + "!");
+			namePara.text("Welcome to Temperature, " + usersName + "!");
 			// append it to the DOM
 			namePara.appendTo("#nameCont");
 			
@@ -25,29 +23,37 @@ $(document).ready(function () {
 				event.preventDefault()
 				// get the value of the content in the name input box
 				var usersName = $("#nameBox").val()
-				// remove the name card from the nameCard id
-				$("#nameCard").remove();
-				// save the name value to local storage
-				localStorage.setItem("name", usersName)
-				// console.log("Name " + usersName + " saved to local storage")
-				// new paragraph
-				var namePara = $("<p>")
-				// give the name para text
-				namePara.text("Welcome to TEMPERATURE, " + usersName + ".");
-				// append it to the DOM
-				namePara.appendTo("#nameCont");
-				// reset the page
-				location.reload()
+
+				// if the name is bank do nothing
+				if (usersName !== "") {
+					// remove the name card from the nameCard id
+					$("#nameCard").remove();
+					// save the name value to local storage
+					localStorage.setItem("name", usersName)
+					// console.log("Name " + usersName + " saved to local storage")
+					// new paragraph
+					var namePara = $("<p>")
+					// give the name para text
+					namePara.text("Welcome to Temperature, " + usersName + ".");
+					// append it to the DOM
+					namePara.appendTo("#nameCont");
+					// reset the page
+					location.reload()
+				}else {
+					// if callout already exists remove it
+					$(".callout").remove();
+					// new paragraph
+					var namePara = $("<p>")
+					// give the name para text
+					namePara.text(usersName + "That's not a name. . .");
+					namePara.addClass("callout alert");
+					// append it to the DOM
+					namePara.appendTo("#nameCont");
+				}
+		
 			});
-			
-			
 
 		}
-
-
-
-
-
 
 		$(".carousel-cell").on("click", function (event) {
 			event.preventDefault()
@@ -96,6 +102,10 @@ $(document).ready(function () {
 				// apply the author text to the second para
 				newPara2.text(" - " + theAuthor)
 				newPara2.attr("class", "quoteAuth")
+				// change the title of the page to the quote
+				$("title").text(theQuote + " - " + theAuthor)
+			
+							
 
 				// append the new div to the results div
 				$(newDiv).appendTo("#results");
@@ -105,6 +115,7 @@ $(document).ready(function () {
 				// remove the original buttons div
 				replaceButtons()
 				// reset the page to the original state
+
 				resetPage()
 			})
 		}else {
@@ -157,12 +168,15 @@ $(document).ready(function () {
 				// apply quote text to the para
 				newPara.text('"' + theQuote +'"')
 				newPara.attr("class", "quotePara")
+
 				
 				// second para for author
 				var newPara2 = $("<p>")
 				// apply the author text to the second para
 				newPara2.text(" - " + theAuthor)
 				newPara2.attr("class", "quoteAuth")
+				// change the title of the page to the quote
+				$("title").text(theQuote + " - " + theAuthor)
 			
 			
 				// append the new div to the results div
@@ -175,11 +189,22 @@ $(document).ready(function () {
 
 		// function to be called at each "how are you feeling" button event listener
 		function replaceButtons() {
-			// replace header in the card with reset text
-		$("#headerQuestion").text("Click 'reset' to start again!")
+		// replace header in the card with reset text
+		$("#headerQuestion").text("Click 'reset' for more quotes!")
 		// empty the question div of all buttons
 		$("#questionButtons").empty()
-		// var to create a new a element
+		
+		// COPY BUTTON UNDER CONSTRUCTION!!!!!
+		// var to create a new a element for copy button
+		var newCopyButton = $("<a>")
+		// add attributes: class "button", id "resetButton", text "Reset"
+		newCopyButton.attr("class", "button")
+		newCopyButton.attr("id", "copyButton")
+		newCopyButton.text("Copy Quote")
+		// append to the question div
+		$(newCopyButton).appendTo("#questionButtons");
+
+		// var to create a new a element for reset button
 		var resetDiv = $("<a>")
 		// add attributes: class "button", id "resetButton", text "Reset"
 		resetDiv.attr("class", "button")
@@ -187,9 +212,38 @@ $(document).ready(function () {
 		resetDiv.text("Reset")
 		// append to the question div
 		$(resetDiv).appendTo("#questionButtons");
+
+		copyQuote()
 		}
 
-		// clicker to reset the page
+		// event listener to copy the quote to be shared
+
+		function copyQuote() {
+		// get the value of the quote
+			$("#copyButton").on("click", function (event) {
+
+					// Create a new textarea element and give it id='temp_element'
+					var textarea = document.createElement('textarea')
+					textarea.id = 'temp_element'
+					// Optional step to make less noise on the page, if any!
+					textarea.style.height = 0
+					// Now append it to your page somewhere, I chose <body>
+					document.body.appendChild(textarea)
+
+					// set the textarea to be the inner HTML of the .quotePara
+					textarea.value = $(".quotePara").html()
+					// Now copy whatever inside the textarea to clipboard
+					var selector = document.querySelector('#temp_element')
+					selector.select()
+					document.execCommand('copy')
+					// Remove the textarea
+					document.body.removeChild(textarea)
+
+		  });
+
+		}
+
+		// event listener for button to reset the page
 		function resetPage() {
 		$("#resetButton").on("click", function (event) {
 			event.preventDefault()
